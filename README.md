@@ -36,7 +36,7 @@ The model follows the **NESGESFinance Corporate Registry Standard 11-2025**.
 
 - **Entity:** NESGESFinance Ecosystem S.A.S.  
 - **Jurisdiction:** LatAm Corporate Framework  
-- **Website:** https://nesgesfinance.com  
+- **Website:** https://nesgesfinance.github.io  
 - **Contact:** info.nesgesfinance@gmail.com  
 
 ---
