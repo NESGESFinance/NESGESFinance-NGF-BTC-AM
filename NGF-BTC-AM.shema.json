@@ -1,0 +1,235 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NGF-BTC-AM Asset Model Schema",
+  "type": "object",
+
+  "required": [
+    "asset_id",
+    "ver",
+    "net",
+    "proto",
+    "type",
+    "issuer",
+    "supply",
+    "allocation",
+    "vesting",
+    "proof_of_production",
+    "oracles",
+    "governance",
+    "risk_policy",
+    "integration",
+    "signature",
+    "motto"
+  ],
+
+  "properties": {
+    "asset_id": {
+      "type": "string",
+      "pattern": "^[A-Z0-9-]+$"
+    },
+
+    "ver": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+$"
+    },
+
+    "net": {
+      "type": "string",
+      "enum": ["bitcoin_mainnet"]
+    },
+
+    "proto": {
+      "type": "string",
+      "enum": ["runes"]
+    },
+
+    "type": {
+      "type": "string",
+      "enum": ["fungible"]
+    },
+
+    "issuer": {
+      "type": "object",
+      "required": ["entity", "jurisdiction", "email", "url"],
+      "properties": {
+        "entity": { "type": "string" },
+        "jurisdiction": { "type": "string" },
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+
+    "supply": {
+      "type": "object",
+      "required": ["total", "dec", "mintable", "burnable", "model"],
+      "properties": {
+        "total": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "dec": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 18
+        },
+        "mintable": { "type": "boolean" },
+        "burnable": { "type": "boolean" },
+        "model": {
+          "type": "string",
+          "enum": ["fixed"]
+        }
+      }
+    },
+
+    "allocation": {
+      "type": "object",
+      "required": [
+        "liq",
+        "prod",
+        "soc_env",
+        "gov_all",
+        "tre",
+        "stake",
+        "team_adv",
+        "ops"
+      ],
+      "properties": {
+        "liq": { "type": "number", "minimum": 0, "maximum": 1 },
+        "prod": { "type": "number", "minimum": 0, "maximum": 1 },
+        "soc_env": { "type": "number", "minimum": 0, "maximum": 1 },
+        "gov_all": { "type": "number", "minimum": 0, "maximum": 1 },
+        "tre": { "type": "number", "minimum": 0, "maximum": 1 },
+        "stake": { "type": "number", "minimum": 0, "maximum": 1 },
+        "team_adv": { "type": "number", "minimum": 0, "maximum": 1 },
+        "ops": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+
+    "vesting": {
+      "type": "object",
+      "required": [
+        "model",
+        "period_months_min",
+        "period_months_max",
+        "unlock_freq",
+        "initial_release"
+      ],
+      "properties": {
+        "model": {
+          "type": "string",
+          "enum": ["linear"]
+        },
+        "period_months_min": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "period_months_max": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "unlock_freq": {
+          "type": "string",
+          "enum": ["quarterly"]
+        },
+        "initial_release": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+
+    "proof_of_production": {
+      "type": "object",
+      "required": ["model", "source", "validation", "hash_algo"],
+      "properties": {
+        "model": {
+          "type": "string",
+          "enum": ["pop"]
+        },
+        "source": { "type": "string" },
+        "validation": { "type": "string" },
+        "hash_algo": {
+          "type": "string",
+          "enum": ["sha256"]
+        }
+      }
+    },
+
+    "oracles": {
+      "type": "object",
+      "required": ["pop_oracle", "rwa_oracle", "interval_days"],
+      "properties": {
+        "pop_oracle": { "type": "string", "enum": ["active", "inactive"] },
+        "rwa_oracle": { "type": "string", "enum": ["active", "inactive"] },
+        "interval_days": { "type": "integer", "minimum": 1 }
+      }
+    },
+
+    "governance": {
+      "type": "object",
+      "required": ["model", "multisig", "quorum", "vote_weight"],
+      "properties": {
+        "model": { "type": "string" },
+        "multisig": { "type": "boolean" },
+        "quorum": {
+          "type": "number",
+          "minimum": 0.5,
+          "maximum": 1
+        },
+        "vote_weight": {
+          "type": "string"
+        }
+      }
+    },
+
+    "risk_policy": {
+      "type": "object",
+      "required": [
+        "mint_risk",
+        "burn_risk",
+        "treasury_risk",
+        "oracle_risk",
+        "governance_risk"
+      ],
+      "properties": {
+        "mint_risk": { "type": "string" },
+        "burn_risk": { "type": "string" },
+        "treasury_risk": { "type": "string" },
+        "oracle_risk": { "type": "string" },
+        "governance_risk": { "type": "string" }
+      }
+    },
+
+    "integration": {
+      "type": "object",
+      "required": [
+        "compat",
+        "api_schema",
+        "indexer_ready"
+      ],
+      "properties": {
+        "compat": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "api_schema": { "type": "string" },
+        "indexer_ready": { "type": "boolean" }
+      }
+    },
+
+    "signature": {
+      "type": "string"
+    },
+
+    "motto": {
+      "type": "string"
+    }
+  }
+}
