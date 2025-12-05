@@ -1,4 +1,4 @@
-# NGF-BTC-AM — Institutional Bitcoin-Based Asset Model  
+# NGF•BTC•AM — Institutional Bitcoin-Based Asset Model  
 **NESGESFinance Ecosystem S.A.S.**  
 Version: **1.0**
 
@@ -6,13 +6,14 @@ Version: **1.0**
 
 ## Overview
 
-**NGF-BTC-AM** is the institutional **fungible Rune-based asset model** issued by **NESGESFinance Ecosystem S.A.S.** on **Bitcoin Mainnet**.  
+**NNGF•BTC•AM** is the institutional **fungible Rune-based asset model** issued by **NESGESFinance Ecosystem S.A.S.** on **Bitcoin Mainnet**.  
 It operates as a hybrid corporate asset designed to support **real-world productive infrastructure**, **treasury operations**, **internal settlement**, and **RWA collateralization** within the NESGESFinance architecture.
 
 This repository contains the official metadata definition:
 
-- `NGF-BTC-AM.json` — Core asset metadata  
-- `NGF-BTC-AM.schema.json` — JSON Schema for validation (coming soon)
+- `ngf-asset.json` — Core asset metadata  
+- `ngf-asset-schema.json` — JSON Schema for validation
+- '.github-workflows-validate-json.yml'
 
 The model follows the **NESGESFinance Corporate Registry Standard 11-2025**.
 
@@ -22,8 +23,8 @@ The model follows the **NESGESFinance Corporate Registry Standard 11-2025**.
 
 | Field | Value |
 |------|--------|
-| **Asset ID** | NGF-BTC-AM |
-| **Ticker** | NGF-BTC-AM |
+| **Asset ID** | NGF•BTC•AM |
+| **Ticker** | NGF•BTC•AM |
 | **Rune ID** | 923867:120 |
 | **Network** | Bitcoin Mainnet |
 | **Protocol** | Runes |
@@ -43,7 +44,7 @@ The model follows the **NESGESFinance Corporate Registry Standard 11-2025**.
 
 ## Description
 
-NGF-BTC-AM functions as the **core institutional asset** of NESGESFinance, used for:
+NGF•BTC•AM functions as the **core institutional asset** of NESGESFinance, used for:
 
 - Collateral for RWA tokenization  
 - Internal settlement and accounting  
@@ -89,7 +90,7 @@ It follows a **non-inflationary, fixed-supply** model with a strict operational 
 - **Model:** PoP — Proof of Production  
 - **Validation Source:** Bitcoin Mempool  
 - **Algorithm:** SHA-256  
-- **Indexer:** NESGES Internal Corporate Indexer  
+- **Indexer:** NESGESFinance Internal Corporate Indexer  
 - **Meaning:**  
   Production arises from **verifiable on-chain operations**, treasury flows, and liquidity activity cycles.
 
@@ -102,7 +103,7 @@ It follows a **non-inflationary, fixed-supply** model with a strict operational 
 - **Sync Interval:** 30 days  
 - **Data Sources:**  
   - Bitcoin Mempool  
-  - NESGES Internal Indexer  
+  - NESGESFinance Internal Indexer  
   - RWA Operations Registry  
 
 ---
@@ -165,8 +166,8 @@ It follows a **non-inflationary, fixed-supply** model with a strict operational 
   - Bitcoin L1  
   - Taproot Assets  
   - Lightning Network  
-- **Indexer Ready:** Yes  
-- **API Schema:** ngf_btc_asset_model_v1  
+- **Indexer Ready:** next  
+- **API Schema:** ngf-asset_model_v1  
 - **Checksum:** SHA-256 compliant  
 
 ---
@@ -175,7 +176,7 @@ It follows a **non-inflationary, fixed-supply** model with a strict operational 
 
 - **Issuer:** NESGESFinance Ecosystem S.A.S.  
 - **Category:** Corporate Hybrid RWA Support Unit  
-- **Documentation Standard:** Corporate Registry 11-2025  
+- **Documentation Standard:** Corporate Holding Registry 11-2025  
 - **Record Persistence:** Perpetual  
 
 ---
@@ -191,21 +192,8 @@ It follows a **non-inflationary, fixed-supply** model with a strict operational 
 
 | File | Description |
 |------|-------------|
-| `NGF-BTC-AM.json` | Official metadata of the NGF-BTC-AM asset |
-| `NGF-BTC-AM.schema.json` | JSON Schema for validation (to be added) |
-
----
-
-## IPFS Upload (Recommended)
-
-For permanent decentralized storage, upload both files to IPFS using:
-
-- **Pinata**
-- **NFT.Storage**
-- **Web3.Storage**
-- Local IPFS Node (`ipfs add`)
-
-If you want, I can generate an **automatic GitHub → IPFS upload workflow**.
+| `ngf-asset.json` | Official metadata of the NGF-BTC-AM asset |
+| `ngf-asset-schema.json` | JSON Schema for validation |
 
 ---
 
