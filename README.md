@@ -13,7 +13,7 @@ This repository contains the official metadata definition:
 
 - `ngf-asset.json` — Core asset metadata  
 - `ngf-asset-schema.json` — JSON Schema for validation
-- '.github-workflows-validate-json.yml'
+- 'github-workflows-validate-json.yml'
 
 The model follows the **NESGESFinance Corporate Registry Standard 11-2025**.
 
